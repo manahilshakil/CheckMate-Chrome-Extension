@@ -1,0 +1,223 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 10px;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(./background.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  width: 400px;
+  height: auto;
+  min-height: 400px;
+  padding: 30px;
+  background: transparent;
+  border: 2px solid #8dc6f7a1;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+}
+
+h1 {
+  color: #5badec;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.task-input {
+  flex: 1;
+  outline: none;
+  padding: 10px 10px 10px 20px;
+  background-color: transparent;
+  border: 2px solid #73abdba1;
+  border-radius: 30px;
+  color: #767575;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.task-input::placeholder {
+  color: #517ea6a1;
+}
+
+.add-button {
+  border: none;
+  outline: none;
+  background: #8dc6f7a1;
+  color: #fff;
+  font-size: 35px;
+  cursor: pointer;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+}
+
+.list-image {
+  margin: 55px auto 0;
+  display: block;
+  width: 200px;
+}
+
+.task {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #42a4f9a1;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px 12px;
+  border: 2px solid #8dc6f7a1;
+  transition: all 0.2s ease;
+}
+
+.task:first-child {
+  margin-top: 0;
+}
+
+.task:last-child {
+  margin-bottom: 0;
+}
+
+.task:hover {
+  background-color: #108dfaa1;
+}
+
+.task label {
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  color: #f4e8e8;
+}
+
+.task span {
+  padding-left: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+span::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  margin-left: -30px;
+  border-radius: 100px;
+  border: 2px solid #80a5f4;
+}
+
+input[type='checkbox'] {
+  visibility: hidden;
+}
+
+input:checked + span {
+  text-decoration: line-through
+}
+
+.task:hover input:checked + span::before, input:checked + span::before {
+  background: url(./check.svg) 50% 50% no-repeat #09bb21;
+  border-color: #09bb21;
+}
+
+.task:hover span::before {
+  border-color: #eee;
+}
+
+.task .delete-btn  {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #f6f0f0;
+  font-size: 24px;
+}
+
+.task .completed {
+  text-decoration: line-through;
+  background-color: #e6e6e6;
+  opacity: 0.7;
+}
+
+.task.hidden {
+  display: none; 
+}
+
+.tasks-container  {
+  height: 300px;
+  overflow: overlay;
+}
+
+.tasks-container::-webkit-scrollbar-track  {
+  background: rgb(247, 247, 247);
+  border-radius: 20px
+}
+
+.tasks-container::-webkit-scrollbar  {
+  width: 0;
+}
+
+.tasks-container:hover::-webkit-scrollbar  {
+  width: 7px;
+}
+
+.tasks-container::-webkit-scrollbar-thumb  {
+  background: #d5d5d5;
+  border-radius: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.filter {
+  color: #959292;
+  padding: 5px 15px;
+  border-radius: 100px;
+  border: 2px solid #80a5f4;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.filter.active, .filter:hover {
+  background-color: #80a5f4;
+  color: #eee;
+}
+
+.delete-all {
+  display: flex;
+  color: #959292;
+  padding: 7px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-all:hover {
+  border-radius: 5px;
+  background-color: #80a5f4;
+  color: #eee;
+}
+
+.hidden {
+  display: none;
+}
+
